@@ -1,0 +1,53 @@
+// less 按照 结构写 样式
+.carousel {
+  // 设置图片和父元素的高度为百分之百，控制父元素的高度就控制啦图片的高度
+  img {
+    height: 100% !important;
+  }
+  // 做四个断点的轮播图高度的控制，使用媒体查询
+  // 列出条件 照着写代码
+  // 让视口变小
+  // 这个响应式，不可能有完全合适的。我们自己控制高度。
+  // 最大值注意书写顺序 从大到小   最大宽和最小宽 不用注意顺序。同类注意。
+  //   如果 视口<768,图高：250px  max-width
+  //   如果 视口<992,图高：400px  max-width
+  //   如果 视口>992,图高：500px  min-width
+
+  @media (max-width: 992px) {
+    .item {
+      height: 400px;
+    }
+  }
+  @media (max-width: 768px) {
+    .item {
+      height: 250px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .item {
+      height: 500px;
+    }
+  }
+}
+// 头部
+
+.navbar-default {
+  background-color: transparent;
+  border: 0;
+}
+// 项目区
+.project {
+  text-align: center;
+  padding-top: 30px;
+  .container {
+    div {
+    //   background-color: pink;
+      a {
+        display: block;
+        height: 200px;
+        background-color: skyblue;
+      }
+    }
+  }
+}
